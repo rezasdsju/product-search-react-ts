@@ -1,0 +1,10 @@
+table{
+    padding: 10px 200px;
+    background-color: rgb(244, 224, 247);
+    width: 100%;
+    
+}
+table th,
+table td {
+    padding: 10px 100px;
+}

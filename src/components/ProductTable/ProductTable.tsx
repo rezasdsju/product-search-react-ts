@@ -3,6 +3,9 @@ import ProductRow from "./ProductRow/ProductRow";
 import ProductCategoryRow from "./ProductCategoryRow/ProductCategoryRow";
 import type { ReactNode } from "react";
 import type { ProductTableTypes } from "../../type";
+
+import './ProductTable.css'
+
 export default function ProductTable({ products, checked, searchedItem }: ProductTableTypes) {
 
     const rows: ReactNode[] = [];

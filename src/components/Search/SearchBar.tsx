@@ -25,7 +25,7 @@ export default function SearchBar({ setChecked, setSearchedItem, searchedItem, p
     return (
         <form action="" className="search-container">
             <div className="input-container">
-                <input type="text" value={searchedItem} onChange={(e) => setSearchedItem(e.target.value)} />
+                <input type="text" placeholder="Search..." value={searchedItem} onChange={(e) => setSearchedItem(e.target.value)} />
                 <div className="stock-filter">
                     <input
                         type="checkbox"
