@@ -4,7 +4,7 @@ import SearchBar from './components/Search/SearchBar'
 import ProductTable from './components/ProductTable/ProductTable'
 
 import type { Product } from './type'
-import ProductRow from './components/ProductRow/ProductRow'
+
 const products: Product[] = [
   { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
   { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
@@ -20,7 +20,7 @@ function App() {
     <>
     <SearchBar></SearchBar>
     <ProductTable products={products}></ProductTable>
-    <ProductRow></ProductRow>
+    
     </>
   )
 }

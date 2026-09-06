@@ -1,5 +1,5 @@
 import type { Product } from "../../type";
-
+import ProductRow from "./ProductRow/ProductRow";
 
 export default function ProductTable({products}:{products:Product[]}){
     
@@ -13,7 +13,7 @@ export default function ProductTable({products}:{products:Product[]}){
             </thead>
             <tbody>
                 {
-                    products.map((product:Product)=> <h4>{product.name}</h4>)
+                    products.map((product:Product)=> <ProductRow product={product}></ProductRow>)
                 }
             </tbody>
         </table>
