@@ -4,14 +4,18 @@ import ProductCategoryRow from "./ProductCategoryRow/ProductCategoryRow";
 export default function ProductTable({products}:{products:Product[]}){
 
     const rows:any = [];
-    const lastCategory: string|null = null;
+    let lastCategory: string|null = null;
 
     products.forEach((product)=>{
-        if (lastCategory===product.category){
+        if (lastCategory!==product.category){
             rows.push (
                 <ProductCategoryRow category={product.category}></ProductCategoryRow>
             )
         }
+        rows.push(
+            <ProductRow name={product.name} price={product.price}></ProductRow>
+        )
+        lastCategory = product.category
     })
     
     return (
@@ -23,9 +27,7 @@ export default function ProductTable({products}:{products:Product[]}){
                 </tr>
             </thead>
             <tbody>
-                {
-                    products.map((product:Product)=> <ProductRow product={product}></ProductRow>)
-                }
+                {rows}
             </tbody>
         </table>
     )

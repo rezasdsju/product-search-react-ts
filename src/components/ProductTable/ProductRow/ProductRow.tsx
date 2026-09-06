@@ -1,10 +1,10 @@
-import type { Product } from "../../../type"
 
-export default function ProductRow({product}:{product:Product}){
+
+export default function ProductRow({name,price}:{name: string,price:string}){
     return (
         <tr>
-            <td> {product.name}</td>
-            <td> {product.price}</td>
+            <td> {name}</td>
+            <td> {price}</td>
         </tr>
     )
 }
