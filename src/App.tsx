@@ -16,11 +16,12 @@ const products: Product[] = [
 ]
 
 function App() {
+  const [searchedItem, setSearchedItem] = useState<string>("")
   const [checked, setChecked] = useState<boolean>(false)
   return (
     <>
-    <SearchBar  setChecked={setChecked}></SearchBar>
-    <ProductTable checked={checked} products={products}></ProductTable>
+    <SearchBar searchedItem={searchedItem} setChecked={setChecked} setSearchedItem={setSearchedItem}></SearchBar>
+    <ProductTable searchedItem={searchedItem} checked={checked} products={products}></ProductTable>
     
     </>
   )

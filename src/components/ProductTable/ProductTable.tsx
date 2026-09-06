@@ -1,12 +1,15 @@
 import type { Product } from "../../type";
 import ProductRow from "./ProductRow/ProductRow";
 import ProductCategoryRow from "./ProductCategoryRow/ProductCategoryRow";
-export default function ProductTable({ products, checked }: { products: Product[], checked: boolean }) {
+export default function ProductTable({ products, checked,searchedItem }: { products: Product[], checked: boolean,searchedItem:string }) {
 
     const rows: any = [];
     let lastCategory: string | null = null;
 
     products.forEach((product) => {
+        if (product.name.toLocaleLowerCase().indexOf(searchedItem.toLocaleLowerCase())===-1){
+            return
+        }
         if (lastCategory !== product.category) {
             rows.push(
                 <ProductCategoryRow category={product.category}></ProductCategoryRow>
