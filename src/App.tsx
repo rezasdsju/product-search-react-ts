@@ -20,7 +20,7 @@ function App() {
   return (
     <>
     <SearchBar  setChecked={setChecked}></SearchBar>
-    <ProductTable products={products}></ProductTable>
+    <ProductTable checked={checked} products={products}></ProductTable>
     
     </>
   )
