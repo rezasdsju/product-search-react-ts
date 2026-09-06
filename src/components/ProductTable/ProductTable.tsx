@@ -1,12 +1,20 @@
+import type { Product } from "../../type";
 
-export default function ProductTable(){
+
+export default function ProductTable({products}:{products:Product[]}){
+    
     return (
         <table>
-            <tbody>
+            <thead>
                 <tr>
-                    <td>name</td>
-                    <td>Price</td>
+                    <th>Name</th>
+                    <th>Price</th>
                 </tr>
+            </thead>
+            <tbody>
+                {
+                    products.map((product:Product)=> <h4>{product.name}</h4>)
+                }
             </tbody>
         </table>
     )

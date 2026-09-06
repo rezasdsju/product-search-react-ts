@@ -19,7 +19,7 @@ function App() {
   return (
     <>
     <SearchBar></SearchBar>
-    <ProductTable></ProductTable>
+    <ProductTable products={products}></ProductTable>
     </>
   )
 }
