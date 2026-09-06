@@ -62,11 +62,12 @@ const products: Product[] = [
 function App() {
   const [searchedItem, setSearchedItem] = useState<string>("")
   const [checked, setChecked] = useState<boolean>(false)
+  const [searchedItemCount, setSearchedItemCount] = useState<number>(0)
   return (
     <>
     <NavBar></NavBar>
-    <SearchBar searchedItem={searchedItem} setChecked={setChecked} setSearchedItem={setSearchedItem}></SearchBar>
-    <ProductTable searchedItem={searchedItem} checked={checked} products={products}></ProductTable>
+    <SearchBar products={products} searchedItemCount={searchedItemCount}  searchedItem={searchedItem} setChecked={setChecked} setSearchedItem={setSearchedItem}></SearchBar>
+    <ProductTable searchedItemCount={searchedItemCount} setSearchedItemCount={setSearchedItemCount} searchedItem={searchedItem} checked={checked} products={products}></ProductTable>
     
     </>
   )
