@@ -1,9 +1,11 @@
-import type { Product } from "../../type";
+
 import ProductRow from "./ProductRow/ProductRow";
 import ProductCategoryRow from "./ProductCategoryRow/ProductCategoryRow";
-export default function ProductTable({ products, checked,searchedItem }: { products: Product[], checked: boolean,searchedItem:string }) {
+import type { ReactNode } from "react";
+import type { ProductTableTypes } from "../../type";
+export default function ProductTable({ products, checked,searchedItem }: ProductTableTypes) {
 
-    const rows: any = [];
+    const rows: ReactNode[] = [];
     let lastCategory: string | null = null;
 
     products.forEach((product) => {
