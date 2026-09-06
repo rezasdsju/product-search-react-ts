@@ -1,7 +1,18 @@
 import type { Product } from "../../type";
 import ProductRow from "./ProductRow/ProductRow";
-
+import ProductCategoryRow from "./ProductCategoryRow/ProductCategoryRow";
 export default function ProductTable({products}:{products:Product[]}){
+
+    const rows:any = [];
+    const lastCategory: string|null = null;
+
+    products.forEach((product)=>{
+        if (lastCategory===product.category){
+            rows.push (
+                <ProductCategoryRow category={product.category}></ProductCategoryRow>
+            )
+        }
+    })
     
     return (
         <table>
