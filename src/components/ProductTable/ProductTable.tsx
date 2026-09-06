@@ -3,7 +3,7 @@ import ProductRow from "./ProductRow/ProductRow";
 import ProductCategoryRow from "./ProductCategoryRow/ProductCategoryRow";
 import type { ReactNode } from "react";
 import type { ProductTableTypes } from "../../type";
-export default function ProductTable({ products, checked, searchedItem, setSearchedItemCount, searchedItemCount }: ProductTableTypes) {
+export default function ProductTable({ products, checked, searchedItem }: ProductTableTypes) {
 
     const rows: ReactNode[] = [];
     let lastCategory: string | null = null;
@@ -30,8 +30,8 @@ export default function ProductTable({ products, checked, searchedItem, setSearc
 
         lastCategory = product.category
     })
-    searchedItemCount = count
-    setSearchedItemCount(searchedItemCount)
+    // searchedItemCount = count
+    // setSearchedItemCount(searchedItemCount)
 
     return (
         <table>

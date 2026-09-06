@@ -9,14 +9,15 @@ export interface SearchBarTypes {
     setChecked:React.Dispatch<React.SetStateAction<boolean>>,
     searchedItem:string,
     setSearchedItem:React.Dispatch<React.SetStateAction<string>>,
-    searchedItemCount:number,
-    products:Product[]
+    // searchedItemCount?:number,
+    products:Product[],
+    checked: boolean
 }
 
 export interface ProductTableTypes { 
     products: Product[], 
     checked: boolean,
     searchedItem:string,
-    setSearchedItemCount:React.Dispatch<React.SetStateAction<number>>,
-    searchedItemCount:number
+    // setSearchedItemCount?:React.Dispatch<React.SetStateAction<number>>,
+    // searchedItemCount?:number
 }
