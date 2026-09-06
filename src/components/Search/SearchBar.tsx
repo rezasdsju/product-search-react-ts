@@ -1,5 +1,8 @@
 // import type { Product } from "../../type"
 import type { SearchBarTypes } from "../../type"
+import './SearchBar.css'
+
+
 export default function SearchBar({ setChecked, setSearchedItem, searchedItem, products, checked }: SearchBarTypes) {
 
     // const matchedProducts: Product[] = products.filter(product =>
@@ -20,13 +23,20 @@ export default function SearchBar({ setChecked, setSearchedItem, searchedItem, p
         (!checked || product.stocked)
     )
     return (
-        <form action="">
-            <input type="text" value={searchedItem} onChange={(e) => setSearchedItem(e.target.value)} />
-            <input type="checkbox" onChange={(e) => setChecked(e.target.checked)} />
-            <label htmlFor="">Only show Products in Stock</label>
+        <form action="" className="search-container">
+            <div className="input-container">
+                <input type="text" value={searchedItem} onChange={(e) => setSearchedItem(e.target.value)} />
+                <div className="stock-filter">
+                    <input
+                        type="checkbox"
+                        onChange={(e) => setChecked(e.target.checked)}
+                    />
+                    <label>Only show Products in Stock</label>
+                </div>
+            </div>
             {/* <p>{searchedItemCount} of {products.length}</p> */}
             {/* <p>{searchedItem.length}</p> */}
-            <p>{filteredProducts.length} of {products.length}</p>
+            <p>{filteredProducts.length} of {products.length} Products</p>
 
         </form>
     )

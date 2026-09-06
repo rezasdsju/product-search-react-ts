@@ -1,0 +1,22 @@
+.search-container {
+    background-color: rgb(215, 191, 220);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.stock-filter {
+    display: flex;
+    
+    gap: 5px;
+    align-items: center;
+
+}
+
+.search-container input[type="text"] {
+    height: 60%;
+   
+}
+.input-container{
+    display: flex;
+}
