@@ -4,6 +4,7 @@ import SearchBar from './components/Search/SearchBar'
 import ProductTable from './components/ProductTable/ProductTable'
 
 import type { Product } from './type'
+import { useState } from 'react'
 
 const products: Product[] = [
   { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
@@ -15,10 +16,10 @@ const products: Product[] = [
 ]
 
 function App() {
-
+  const [checked, setChecked] = useState<boolean>(false)
   return (
     <>
-    <SearchBar></SearchBar>
+    <SearchBar  setChecked={setChecked}></SearchBar>
     <ProductTable products={products}></ProductTable>
     
     </>
